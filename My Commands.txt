@@ -1,0 +1,261 @@
+What is devops 
+DevOps is a software development methodology that combines software development with information technology operations. The goal of DevOps is to shorten the systems development life cycle while also delivering features, fixes, and updates frequently in close alignment with business objectives
+what is use of devops
+
+To create a muliple direcctoress and subdirectorys 
+Eg:- Mkdir -p World/{India/{HYD,BNG},Aus/{Syndi,Peri},USA/{Tramp,Nyc}}
+Copying one directry to another directory we use command
+cp -rvfp <Sourc dir> <Destindir>
+=> rvfp
+r-recusely {coping with content}
+v-Verbose {Seeing the proccess
+f-Forcefully{Multiple files at a time}
+p-Permission {With permission}
+
+
+Find
+Find &Find . -name "file name" : Find is command is used to find the files {. is in the current directory}
+Find .-name "File*" : It will find the all files with starting letter
+grep
+grep is content search
+grep scm File name {scm is the content}
+grep scm* .file {* is the Wilde card character it will search all the .files}
+grep -R scm* : It will search in subdirectory also {-R recursively}
+grep -R -n scm* : It will find where exactly line number is their {-n for to find the line number}
+grep -R -n -i scm* : it will find kinsentive {-i Kinsentive}
+grep -R -n -i -v scm* : It will print the except scm lines it means its a voice versa {-v its a voice versa}
+Cut
+cut is the command display the content in coloum wise
+cut -f1 file name : it display the content in 1st coloum  of the file
+cut -f1-n file name: it display the all coloum in the file {'-' is operator n is the number}
+cut -c1,2,3 File name : it display in character wise {c means character}
+cut -d"%" -f1 File name :it separate symbol in the file {-d is delimiter } 
+Uniq
+Uniq is command it eliminates the duplicates  
+Uniq File name : it eliminates the duplicates
+Uniq -d file name : it exactly show the eliminated one
+uniq is command eliminates only in order wise one in the file 
+Sort
+sort is the command it sort in the file 
+sort file name : it sort in ascending order 
+sort -r File name: it sort in descending order {-r is nothing but reverse}
+Operators
+They are three operator are their
+1) > {Redirection }:This operator is used to store some data in a file {In redirection the exit data will be over rides:: The new data will display in the file }
+2) >> {Appending Operators {Appending is nothing but to Add}} : It will add to the existing data 
+3) | {Pipe} : pipe is command which command1 output is the input of the command2 {The command which built with pipe operator are called one liners }
+Wc 
+Wc is the command that count the words in file
+wc -l :it show the how many lines are their in a file
+wc -c : it show the how many character in a file
+wc -w : it is the command is used to calculate the words
+awk
+awk is the command it work like a cut command  but it works in a customer manner
+awk -F"%" '{print $1$2}' file name:This command is is used for to get a particular row  output{=> % is the symbol in the table :. -F is the delimiter }
+awk -F"%" '{print $1"=>"$2}' file name: This command is is used for to get a particular row  output {in this command we can insert any thing between the rows} 
+awk -F"%" '{print NF}' file name: In this command we can print the number of coloum in a file 
+awk -F"%" '{print NR}' file name: In this command we can print the number of rows in a file 
+awk -F"%" '{print $(NF-1)}' File name : In this command we can get last bunt not one coloum number
+sed 
+sed is the command is used for find and replace 
+sed  's/bcm/scm/g' file name :It the command is used for seach and replace {s means search and g means globally }
+sed -i 's/bcm/scm/g' file name : It command is used for search and replace and save in a file {-i is used to save the changes in a file} 
+sed  's/^bcm/scm/g' file name : It command is used for search and replace only start with first line {^ it is replace only start letter in a line}
+sed  's/bcm$/scm/g' file name : It command is used for search and replace only ending line {$ it is replace only ending letter in a line}
+sed  's/^bcm$/scm/g' file name : It command is used for search and replace line which contain only scm   {$ it is replace only ending letter in a line}
+
+ps -aef : is the command we know that all the background process 
+Kill
+Kill is the command to close the background process
+Kill process id : it will kill the particular process id
+Kill -9 process id : it will forcefully close the particular background process
+df -h is used to find the disk space
+top 
+top is the command that show you the total performance of you system 
+free -m is the command that show free memory of the system {=> it show the ram memory} 
+
+Network{how do i connect to other Linux machine}
+scp : is the command to copy a file in to another machine{scp means secure copy}
+scp source file name machine user name with ip address location :is the command to copy a file in to another machine
+ssh 
+ssh we can run the command on remote machine 
+ssh   machine user name with ip address "command" : we can run the command in remote machine
+netstat 
+netstat is the command to know the open ports are available in the system 
+netstat -nl :is the command to know the open ports are available in the system 
+netstat -nl |grep port number :it is command that help you to find port is open or not
+telnet
+telnet is the command to check the port number in remote machine
+telnet ip address port number :This is the command to check the port number in remote machine
+File Permission 
+Read    -R -4
+Write   -W-2
+execute -X-1
+Total = 7
+
+read,wirte and execute -7
+read and write -6
+read and execute -5
+read -4
+write and execute -3
+write -2
+execute -1
+No Permmision -0  and symbool is '--'
+
+Owner, Author
+Group
+Other
+
+--- --- ---
+au    g   o
+
+=> While giving the permission with chmode we have to give the total three that is owner group and others {one number = one group}
+- --- --- ---
+if you see type ls -l it show the list it started with '-' it is a file and it is started with 'd' means it is a directory 
+
+What is the difference between bin and sbin?
+/bin This directory contains executable programs which are needed in single user mode and to bring the system up or repair it. /sbin Like /bin, this directory holds commands needed to boot the system, but which are usually not executed by normal users. /usr/bin This is the primary directory for executable programs.Apr 11, 2014
+
+
+
+
+
+
+
+
+
+
+
+ 
+What is version control(or)Source code mangament ?
+Version control is a system that records changes to a file or set of files over time so that you can recall specific versions later
+A component of software configuration management, version control, also known as revision control or source control, is the management of changes to documents, computer programs, large web sites, and other collections of information.
+
+
+Git
+Git is is a version controlling system /source code/management/software configure mgmt
+Git is a distributed version controlling system 
+Git is can distributed the data internally with out connecting to server 
+What is the difference between tripical version controlling system and distribute version controlling system?
+In convestion version controlling a devloper can push his code repository only and he can't share his code to anyone elese he can't work ofline &when he come distribute version controlling he can share his code any one with out the of remote repository
+
+How to install a gitblit ?
+First go to gitblit web and download the gitblit {gitblit go windos or linux which you want download } go to download copy the download one past in where you want and exctract their and go to gitblit open data and open defalut properties and open in notepad 'server.httpsPort' & 'server.httpPort' and give the both portnumbes and save.
+Then run a command gitblit.cmd 
+open a giltbilt repository :give the ip address:give httpsPortnumber in the browser
+create a repository 
+Take the url and clone repository to the local machine
+gitclone : the command will clone the remote repository to your local repository
+go to cd "repository name"
+git config --global user.name "user name" : it will create the user name
+git config --global user.email "username@gmail.com" it will create the emailid
+git config -- global push.defalut sample
+git config --list => it will show all list of config
+if we want cross check that user and email id is create are not :git config --global user.name and gitconfig --global user.email
+git add filename : this command helps to include the file to part of work space
+git status :it will show that file is in which postion 
+git commit : it push the file to local repository
+git commit -m"some content" : it push to the local repository 
+git push : it push from local repository to remote repository
+git rm file name : It deleted the file 
+then we have to commit 
+git log : we can see all the commited revsion numbers or shavansum 
+git checkout shavansum number : it will get back the deleted file
+git checkout maste : it will take you to laste one
+When ever you clone it defalut enable the master
+Git repo structure
+repo:/master
+branch
+tags
+ branching:
+ git branch name: it will create the branch
+
+
+
+ checkout means switch
+ git checkout branch name : it will go to branching
+ git push origin branch name :it push the branch to remote repository {origin means it push from where you clone the repository with origin you cloned it will admistor}
+ git branch -r : it will show you all remote repository branchs
+ git branch -a : it will show you all own branches
+ git branch -v : it is used for to show the you  commited  branch only with revsion numbers
+ git branch -D branch name :it will delete the branch forcefully {we don't merged the branch in to masters}
+ git branch -d branch name : it will delete the branh {it delete the branch which are merged}
+ git push orgin :branch name : It will delete in remote repository {: delete the remote branch}
+ git fetch :  Download objects and refs from another repository
+ Taging :
+ git tag name or version : it will create the a tag
+ git tag --list : it show all the tags list 
+ git show name or number : it the which revision number is taged
+ git tag name or version -m"message" : it named tag in this one it shows the all
+ git merging:combine frome one to another
+ git merges:merge all changes and create a merge commit in destination
+ gir rebase: merge all the changes & doesn't create any commit in destnation
+git cherry-pick:it will just merge the given revision number (savansom)
+git stash:stash stores the  staged changes into a packgae and stores in memory, when ever u want to pull remote changes and want to apply the un staged changes you can do this
+git stash : revert the tracked/staged files and keep the changes in memory
+git stash list: to see the list of stash
+git stash apply stash@{0}: it apply stash
+git stash drop stash@{0} : to delete the stash
+git stash pop : it apply and delete the stash (it perfrome at a time) 
+git clean -f : it will clean the untracked files(no reverting or backup)
+
+
+
+ 
+
+ 
+
+Maveen
+what is build automation ?
+Build automation is the process of automating the creation of a software build and the associated processes including: compiling computer source code into binary code, packaging binary code, and running automated tests.
+What is mavn life cycle 
+verify            :- Downlod the depandent libraries
+Compile           :- Compile source code
+Test - compile      :- compiles the test code
+Test              :-Excute the test code
+Package           :- preaper jar/war
+Install           :-Copy to local repository(.M2)
+Deploy            :-Deploy to remote repository (Nexus/artifactory)
+Clean             :- It clean the output  means (It clean our traget Directory )(mvn clean)
+Clean is a life cycle it not a phase
+
+ mvn verify:- it download all depandance libry 
+Pom.xml is defalut build script for maven
+
+Oreder of mavan repository 
+1)appache
+2)
+3)
+
+Mavenization:-  convert ant projects to mavan project
+command : java -jar mavenize version .jar 
+Pulging 
+Praent and chaild relation 
+In parent and chaild relation we copy from parent to chaild (we creat folder or directiorys)in parent package we "pom" insted of "jar"
+We have to give the modle in parent pom.xml 
+<moudle>A<moudle>
+<moudle>B<moudle>
+We can run the commands from parent only
+If have depencdencies 
+If we have two files 'A' and 'B' 
+If we want excute 'B' 
+If 'B' file is depandancy to 'A' (in this case first excute 'A'and it will excute 'B' )
+in case we have to add depandancy  in 'B'pom.xml of 'A'gui it means (goupId,artifactId,veersion)copy all id past in 'B'then save pom.xml
+Then excute in parent 
+
+
+What is jenkins?
+Jenkins is an open source automation tool written in Java with plugins built for Continuous Integration purpose. Jenkins is used to build and test your software projects continuously making it easier for developers to integrate changes to the project, and making it easier for users to obtain a fresh build. It also allows you to continuously deliver your software by integrating with a large number of testing and deployment technologies
+
+What is Jenkins?
+Jenkins is powerful aplication that allows you to continus integration and continus delivery
+Why Jenkins?
+jenkins is software that allows the continus integration install in servers
+what is contnuous  Integration?
+contnuous intergration means the devloper devlope the code and put in a shared repository at regular intervals this concepet ment to remove the problem  of finding later occurence issuesin the build lifecycle
+
+
+
+
+
+
