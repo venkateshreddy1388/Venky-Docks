@@ -63,6 +63,7 @@ sed -i 's/bcm/scm/g' file name : It command is used for search and replace and s
 sed  's/^bcm/scm/g' file name : It command is used for search and replace only start with first line {^ it is replace only start letter in a line}
 sed  's/bcm$/scm/g' file name : It command is used for search and replace only ending line {$ it is replace only ending letter in a line}
 sed  's/^bcm$/scm/g' file name : It command is used for search and replace line which contain only scm   {$ it is replace only ending letter in a line}
+sed  '/^$/g' fiile name : it will delete the empty sampce line by line
 
 ps -aef : is the command we know that all the background process 
 Kill
